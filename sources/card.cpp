@@ -6,36 +6,36 @@ using namespace std;
 namespace ariel{
    
     Card::Card(int cType, int cVal){
-        this->cType=static_cast<cardType>(cType);
-        this->cVal=static_cast<cardVal>(cType);
+        this->cType=cType;
+        this->cVal=cVal;
     }
 
 
-    string Card::TypeToString(cardType cVal){
+    string Card::TypeToString(int cTtype){
     switch(cType)
     {
-        case Clubs : return "Clubs";
-        case Hearts : return "Hearts";
-        case Diamonds : return "Diamonds";
-        case Pikes : return "Pikes";
+        case 20 : return "Clubs";
+        case 30 : return "Hearts";
+        case 40 : return "Diamonds";
+        case 50 : return "Pikes";
     }
     }
 
-    string Card::ValToString(cardVal cVal){
+    string Card::ValToString(int cVal){
     switch(cType)
     {
-        case Two : return "Two";
-        case Three : return "Three";
-        case Four : return "Four";
-        case Five : return "Five";
-        case Six : return "Six";
-        case Seven : return "Seven";
-        case Eigth : return "Eigth";
-        case Ten : return "Ten";
-        case Valet : return "Valet";
-        case Dame : return "Dame";
-        case King : return "King";
-        case As : return "As";
+        case 2 : return "Two";
+        case 3 : return "Three";
+        case 4 : return "Four";
+        case 5 : return "Five";
+        case 6 : return "Six";
+        case 7 : return "Seven";
+        case 8 : return "Eigth";
+        case 9 : return "Ten";
+        case 10 : return "Valet";
+        case 11 : return "Dame";
+        case 12 : return "King";
+        case 13 : return "As";
 
     }
     }

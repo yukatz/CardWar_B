@@ -8,7 +8,9 @@ namespace ariel{
         vector<Card>arema;
         int score = 0;
     }
-
+    string Player::getName(){
+        return name_;
+    }
     void Player::takeCard(Card card){
         arema.push_back(card);
     }
@@ -17,12 +19,14 @@ namespace ariel{
         arema.pop_back();
         return card;
     }
-
+    void Player::setStackSize(int n){
+        score== score+n;
+    }
     int Player::stacksize(){
-        return 0;
-        };//prints the amount of cards left. should be 21 but can be less if a draw was played
+        return arema.size();
+        };//prints the amount of cards left.
     int Player::cardesTaken(){
-        return 0;
+        return score;
         };// prints the amount of cards this player has won.
     
 };
