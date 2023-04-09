@@ -1,5 +1,6 @@
 #include "player.hpp"
 
+
 namespace ariel{
     
     //Constructor:
@@ -14,13 +15,16 @@ namespace ariel{
     void Player::takeCard(Card card){
         arema.push_back(card);
     }
-    Card Player::dropCard(){
+    Card Player::droppedCard(){
         Card card = arema.back();
-        arema.pop_back();
         return card;
     }
+    void Player::dropCard(){
+        arema.pop_back();
+    }
+
     void Player::setStackSize(int n){
-        score== score+n;
+        score = score+n;
     }
     int Player::stacksize(){
         return arema.size();

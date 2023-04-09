@@ -1,9 +1,12 @@
 
 #include "game.hpp"
-#include "card.hpp"
 #include <random>
+#include "card.hpp"
+#include <vector>
 
 using namespace std;
+
+
 namespace ariel{
 
     
@@ -28,33 +31,33 @@ namespace ariel{
       std::mt19937 gen(shVal());
       shuffle(cardSet_.begin(),cardSet_.end(),gen);
 
-      for(int i=0;i<26;i=i+2){
-        Card card1 = cardSet_[i];
-        Card card2 = cardSet_[i+1];
+      for(int i=1;i<27;i=i+2){
+        Card card1 = cardSet_[static_cast<vector<Card>::size_type>(i)];
+        Card card2 = cardSet_[static_cast<vector<Card>::size_type>(i+1)];
         p1_.takeCard(card1);
         p2_.takeCard(card2);
      }
     }
 
     void Game::playTurn(){
-      Card card1 = p1_.dropCard();
-      Card card2 = p2_.dropCard();
-      lastTurn = p1_.getName() + " played "+card1.TypeToString(card1.cType)+" of "+card1.ValToString(card1.cVal)+
-                 p2_.getName() + "played "+card2.TypeToString(card2.cType)+" of "+card2.ValToString(card2.cVal)+".";
+      Card card1 = p1_.droppedCard();
+      Card card2 = p2_.droppedCard();
+      lastTurn = p1_.getName() + " played "+card1.TypeToString(card1.getType())+" of "+card1.ValToString(card1.getVal())+
+                 p2_.getName() + "played "+card2.TypeToString(card2.getType())+" of "+card2.ValToString(card2.getVal())+".";
 
-      if(card1.cVal>card2.cVal){
+      if(card1.getVal()>card2.getVal()){
         p1_.setStackSize(1);
         lastTurn = lastTurn + " "+p1_.getName() + "wins.";
        
       }
-      if(card1.cVal<card2.cVal) {
+      if(card1.getVal()<card2.getVal()) {
         p2_.setStackSize(1);
         lastTurn = lastTurn + " "+p1_.getName() + "wins.";
       }
-      if(card1.cVal==card2.cVal){
+      if(card1.getVal()==card2.getVal()){
         lastTurn = lastTurn + "Draw. ";
-        p1_.arema.pop_back();
-        p2_.arema.pop_back();
+        p1_.dropCard();
+        p2_.dropCard();
         p1_.setStackSize(2);
         p2_.setStackSize(2);
         playTurn();

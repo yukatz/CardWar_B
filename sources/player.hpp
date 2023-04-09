@@ -10,15 +10,17 @@ class Player{
   private:   
     string name_;
     int score;
+    vector<Card> arema;
+
  
     //Constructor:
   public:
-    vector<Card> arema;
     Player(string n);
     string getName();
 
     void takeCard(Card card);
-    Card dropCard();
+    Card droppedCard();
+    void dropCard();
     //Functions:
     void setStackSize(int n);
     int stacksize();//prints the amount of cards left. should be 21 but can be less if a draw was played

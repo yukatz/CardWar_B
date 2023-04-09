@@ -1,3 +1,4 @@
+#pragma once
 #include <string>
 #include <iostream>
 
@@ -9,7 +10,7 @@ class Card{
 private:
     int cType;
     int cVal;
-    
+
 public:
     Card(int cType, int cVal);
     int getType();
