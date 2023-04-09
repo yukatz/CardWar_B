@@ -7,10 +7,11 @@
 namespace ariel{
 class Game{
   private:   
-    Player p1_;
-    Player p2_;
+    Player &p1_;
+    Player &p2_;
     string lastTurn;
     string log;
+    int flag;
 
 
   public:

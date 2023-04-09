@@ -7,7 +7,7 @@ namespace ariel{
     Player::Player(string n){
         this->name_=n;
         vector<Card>arema;
-        int score = 0;
+        this->score = 0;
     }
     string Player::getName(){
         return name_;
@@ -23,9 +23,12 @@ namespace ariel{
         arema.pop_back();
     }
 
-    void Player::setStackSize(int n){
+    void Player::setScoreSize(int n){
         score = score+n;
     }
+
+
+     
     int Player::stacksize(){
         return arema.size();
         };//prints the amount of cards left.

@@ -22,7 +22,7 @@ class Player{
     Card droppedCard();
     void dropCard();
     //Functions:
-    void setStackSize(int n);
+    void setScoreSize(int n);
     int stacksize();//prints the amount of cards left. should be 21 but can be less if a draw was played
     int cardesTaken();// prints the amount of cards this player has won.
     

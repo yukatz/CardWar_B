@@ -23,8 +23,8 @@ namespace ariel{
         case 30 : return "Hearts";
         case 40 : return "Diamonds";
         case 50 : return "Pikes";
-        default: 
-           throw std :: out_of_range("Not valid card type");
+        default : return "Not valid card type";
+
     }
     }
 
@@ -43,8 +43,7 @@ namespace ariel{
         case 11 : return "Dame";
         case 12 : return "King";
         case 13 : return "As";
-         default: 
-           throw std :: out_of_range("Not valid card value");
+        default :  return "Not valid card type";
 
     }
     }
