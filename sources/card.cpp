@@ -1,4 +1,4 @@
-#include <iostream>
+//#include <iostream>
 #include "card.hpp"
 #include <string>
 using namespace std;
@@ -6,10 +6,16 @@ using namespace std;
 namespace ariel{
    
     Card::Card(int cType, int cVal){
-        this->cType=cType;
-        this->cVal=cVal;
+        cType=cType;
+        cVal=cVal;
     }
-
+    
+    int Card::getType(){
+        return cType;
+    }
+    int Card::getVal(){
+        return cVal;
+    }
 
     string Card::TypeToString(int cTtype){
     switch(cType)
