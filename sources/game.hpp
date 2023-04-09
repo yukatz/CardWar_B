@@ -9,13 +9,11 @@ class Game{
   private:   
     Player p1_;
     Player p2_;
-    vector<Card>cardSet_;
+
 
   public:
-    Game(Player p_1, Player p_2);//Constructor:
-
-    void cardSet();
-    void devCards();
+    Game(Player &p1, Player &p2);//Constructor:
+   
 
 
 

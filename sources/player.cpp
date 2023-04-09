@@ -3,9 +3,20 @@
 namespace ariel{
     
     //Constructor:
-    Player::Player(string n):
-    name_(n),arema(vector<Card>{}){}
-    
+    Player::Player(string n){
+        this->name_=n;
+        vector<Card>arema;
+        int score = 0;
+    }
+
+    void Player::takeCard(Card card){
+        arema.push_back(card);
+    }
+    Card Player::dropCard(){
+        Card card = arema.back();
+        arema.pop_back();
+        return card;
+    }
 
     int Player::stacksize(){
         return 0;

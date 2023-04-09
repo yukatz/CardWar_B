@@ -1,9 +1,8 @@
-#include <string.h>
+#include <string>
 #include <iostream>
+using namespace std;
 
 namespace ariel{
-
-class Card{
     enum cardType{
         Clubs =20,
         Hearts=30,
@@ -25,13 +24,17 @@ class Card{
         King,
         As
 };
+class Card{
+
 public:
     cardType cType;
     cardVal cVal;
 
     Card(int cType, int cVal);
+    string TypeToString(cardType cType);
+    string ValToString(cardVal cVal);
 
-    string toString();
+
     
 };
 };

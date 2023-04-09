@@ -1,36 +1,51 @@
 
 #include "game.hpp"
 #include "card.hpp"
+#include <random>
 
 
 namespace ariel{
-    Game::Game(Player p1, Player p2):
-    p1_(p1),p2_(p2),cardSet_(vector<Card>{}){}
+
     
-    void Game::cardSet(){
-      int Types[]={20,30,40,50};
-      int Values[]={2,3,4,5,6,7,8,9,10,11,12,13,14};
-      int index = 0;
-      for(int i = 0; i < 4; i++){
-        for(int j = 0; i < 13; i++){
-          Card card(Types[i],Values[j]);
-          cardSet_.push_back(card);
-        }
+    Game::Game(Player &p1, Player &p2):p1_(p1), p2_(p2){
+       vector<Card>cardSet_;
+
+
+
+       for(int i=2; i<15; i++){
+        Card card1(i,20);
+        Card card2(i,30);
+        Card card3(i,40);
+        Card card4(i,50);
+        cardSet_.push_back(card1);
+        cardSet_.push_back(card2);
+        cardSet_.push_back(card3);
+        cardSet_.push_back(card4);
+       }
+      std::random_device shVal;
+      std::mt19937 gen(shVal());
+      shuffle(cardSet_.begin(),cardSet_.end(),gen);
+
+      for(int i=0;i<26;i=i+2){
+        Card card1 = cardSet_[i];
+        Card card2 = cardSet_[i+1];
+        p1_.takeCard(card1);
+        p2_.takeCard(card2);
+     }
+    }
+
+    void Game::playTurn(){
+      Card card1 = p1_.dropCard();
+      Card card2 = p2_.dropCard();
+      if(card1.cVal>card2.cVal){
+        p1_.score++;
       }
-      shuffle(cardSet_.begin(),cardSet_.end(),52);
+      else 
+
       
-    };
 
-
-
-    void Game::devCards(){
 
     };
-    
-
-
-
-    void Game::playTurn(){};
 
 
     void Game::printLastTurn(){};//print the last turn stats. For example:
