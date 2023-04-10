@@ -8,15 +8,15 @@ namespace ariel{
 class Card{
 
 private:
-    int cType;
     int cVal;
+    string cType;
 
 public:
-    Card(int cType, int cVal);
-    int getType();
+    Card(int cVal, int cType);
+    string getType();
     int getVal();
-    string TypeToString(int cType);
     string ValToString(int cVal);
+    string cardToString();
 
 
     
