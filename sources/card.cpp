@@ -5,19 +5,19 @@
 namespace ariel{
    
     Card::Card(int cVal, string cType){
-        cVal=cVal;
-        cType=cType;
+        this->cVal=cVal;
+        this->cType=cType;
     }
     
-    string Card::getType(){
+    std::string Card::getType(){
         return cType;
     }
     int Card::getVal(){
         return cVal;
     }
 
-    string Card::toString() {
-    string ValToStr;
+   string Card::cardToString() {
+    std::string ValToStr;
     switch (cVal) {
         case 11:
             ValToStr = "Jack";
@@ -35,7 +35,7 @@ namespace ariel{
             ValToStr = std::to_string(cVal);
             break;
     }
-    return ValToStr + " of " + cType;
+    return ValToStr + " of " + cType + " ";
 }
 }
 

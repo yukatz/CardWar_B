@@ -16,7 +16,7 @@ class Player{
     //Constructor:
   public:
     Player(string n);
-    string getName();
+    std::string getName();
 
     void takeCard(Card card);
     Card droppedCard();

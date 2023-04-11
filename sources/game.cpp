@@ -10,14 +10,16 @@ using namespace std;
 namespace ariel{
 
     
-    Game::Game(Player &p1, Player &p2):p1_(p1),p2_(p2){
-      if(&p1!=&p2)
-      {
+    Game::Game(Player &p1, Player &p2):
+      p1_ (p1),
+      p2_(p2){
+      //if(&p1!=&p2)
+      //{
        vector<Card>cardSet_;
-       string lastTurn = "";
-       string log = "";
-       flag=0;
-       draw=0;
+       this->lastTurn = "";
+       this->log = "";
+       this->flag=0;
+       this->draw=0;
 
        for(int i=2; i<15; i++){
         Card card1(i,"Hearts");
@@ -39,24 +41,25 @@ namespace ariel{
         p1_.takeCard(card1);
         p2_.takeCard(card2);
       }
-     }else throw std::out_of_range("Must enter 2 different players");
+    // }else throw std::out_of_range("Must enter 2 different players");
     }
 
     void Game::playTurn(){
+      if(&p1_!=&p2_){
       if(flag==0){
         Card card1 = p1_.droppedCard();
         Card card2 = p2_.droppedCard();
         p1_.dropCard();
         p2_.dropCard();
 
-        lastTurn = p1_.getName() + " played "+card1.toString() + 
-                   p2_.getName() + "played "+card2.toString();
+        lastTurn = p1_.getName() + " played "+card1.cardToString() + 
+                   p2_.getName() + " played "+card2.cardToString() + ".";
       if(card1.getVal()>card2.getVal()){
         if(draw == 1){
         p1_.setScoreSize(6);
         }else {p1_.setScoreSize(2);}
         draw = 0;
-        lastTurn = lastTurn + " "+p1_.getName() + "wins.";
+        lastTurn = lastTurn + " "+p1_.getName() + " wins.";
        
       }
       if(card1.getVal()<card2.getVal()) {
@@ -64,10 +67,10 @@ namespace ariel{
         p2_.setScoreSize(6);
         }else {p2_.setScoreSize(2);}
         draw = 0;
-        lastTurn = lastTurn + " "+p1_.getName() + "wins.";
+        lastTurn = lastTurn + " "+p1_.getName() + " wins.";
       }
       if(card1.getVal()==card2.getVal()){
-        lastTurn = lastTurn + "Draw. ";
+        lastTurn = lastTurn + " Draw. ";
         p1_.dropCard();
         p2_.dropCard();
         draw = 1;
@@ -75,6 +78,9 @@ namespace ariel{
       }
       log = log + lastTurn;
       } else throw std::out_of_range("Game over");
+      }else throw std::out_of_range("Must enter 2 different players");
+
+
     };
 
 

@@ -8,14 +8,14 @@ namespace ariel{
 class Card{
 
 private:
-    int cVal;
-    string cType;
+    int cVal = 0;
+    std::string cType;
 
 public:
     Card(int cVal, string cType);
-    string getType();
+    std::string getType();
     int getVal();
-    string toString();
+    string cardToString();
 
 
     
