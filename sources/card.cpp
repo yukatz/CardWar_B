@@ -4,7 +4,7 @@
 
 namespace ariel{
    
-    Card::Card(int cVal, int cType){
+    Card::Card(int cVal, string cType){
         cVal=cVal;
         cType=cType;
     }
@@ -16,30 +16,27 @@ namespace ariel{
         return cVal;
     }
 
-    string Card::ValToString(int cVal){
-    switch(cVal)
-    {
-        case 2 : return "Two";
-        case 3 : return "Three";
-        case 4 : return "Four";
-        case 5 : return "Five";
-        case 6 : return "Six";
-        case 7 : return "Seven";
-        case 8 : return "Eigth";
-        case 9 : return "Ten";
-        case 10 : return "Valet";
-        case 11 : return "Dame";
-        case 12 : return "King";
-        case 13 : return "As";
-        default :  return "Not valid card type";
-
+    string Card::toString() {
+    string ValToStr;
+    switch (cVal) {
+        case 11:
+            ValToStr = "Jack";
+            break;
+        case 12:
+            ValToStr = "Queen";
+            break;
+        case 13:
+            ValToStr = "King";
+            break;
+        case 14:
+            ValToStr = "Ace";
+            break;
+        default:
+            ValToStr = std::to_string(cVal);
+            break;
     }
-    }
-
-    string cardToString(){
-        string res = ;
-
-    }
+    return ValToStr + " of " + cType;
+}
 }
 
     

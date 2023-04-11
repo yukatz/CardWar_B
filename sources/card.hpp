@@ -12,11 +12,10 @@ private:
     string cType;
 
 public:
-    Card(int cVal, int cType);
+    Card(int cVal, string cType);
     string getType();
     int getVal();
-    string ValToString(int cVal);
-    string cardToString();
+    string toString();
 
 
     

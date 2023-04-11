@@ -12,6 +12,7 @@ class Game{
     string lastTurn;
     string log;
     int flag;
+    int draw;
 
 
   public:

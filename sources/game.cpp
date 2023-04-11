@@ -11,17 +11,19 @@ namespace ariel{
 
     
     Game::Game(Player &p1, Player &p2):p1_(p1),p2_(p2){
-      if(&p1!=&p2){
+      if(&p1!=&p2)
+      {
        vector<Card>cardSet_;
        string lastTurn = "";
        string log = "";
        flag=0;
+       draw=0;
 
        for(int i=2; i<15; i++){
-        Card card1(i,20);
-        Card card2(i,30);
-        Card card3(i,40);
-        Card card4(i,50);
+        Card card1(i,"Hearts");
+        Card card2(i,"Clubs");
+        Card card3(i,"Spades");
+        Card card4(i,"Diamonds");
         cardSet_.push_back(card1);
         cardSet_.push_back(card2);
         cardSet_.push_back(card3);
@@ -47,25 +49,29 @@ namespace ariel{
         p1_.dropCard();
         p2_.dropCard();
 
-        lastTurn = p1_.getName() + " played "+card1.TypeToString(card1.getType())+" of "+card1.ValToString(card1.getVal())+
-                   p2_.getName() + "played "+card2.TypeToString(card2.getType())+" of "+card2.ValToString(card2.getVal())+".";
-
+        lastTurn = p1_.getName() + " played "+card1.toString() + 
+                   p2_.getName() + "played "+card2.toString();
       if(card1.getVal()>card2.getVal()){
-        p1_.setScoreSize(2);
+        if(draw == 1){
+        p1_.setScoreSize(6);
+        }else {p1_.setScoreSize(2);}
+        draw = 0;
         lastTurn = lastTurn + " "+p1_.getName() + "wins.";
        
       }
       if(card1.getVal()<card2.getVal()) {
-        p2_.setScoreSize(2);
+        if(draw == 1){
+        p2_.setScoreSize(6);
+        }else {p2_.setScoreSize(2);}
+        draw = 0;
         lastTurn = lastTurn + " "+p1_.getName() + "wins.";
       }
       if(card1.getVal()==card2.getVal()){
         lastTurn = lastTurn + "Draw. ";
         p1_.dropCard();
         p2_.dropCard();
-        p1_.setScoreSize(2);
-        p2_.setScoreSize(2);
-        playTurn();
+        draw = 1;
+        
       }
       log = log + lastTurn;
       } else throw std::out_of_range("Game over");
@@ -78,7 +84,7 @@ namespace ariel{
                                                     // Alice played Queen of Hearts Bob played 5 of Spades. Alice wins.
                                                     // Alice played 6 of Hearts Bob played 6 of Spades. Draw. Alice played 10 of Clubs Bob played 10 of Diamonds. draw. Alice played Jack of Clubs Bob played King of Diamonds. Bob wins.
     void Game::playAll(){//playes the game untill the end
-      while((p1_.cardesTaken() + p2_.cardesTaken())>52){
+      for(int i=0; i<26; i++){
         playTurn();
       }
       flag = 1;
