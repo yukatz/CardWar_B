@@ -12,7 +12,7 @@ private:
     std::string cType;
 
 public:
-    Card(int cVal, string cType);
+    Card(int cVal, std::string cType);
     std::string getType();
     int getVal();
     string cardToString();

@@ -11,8 +11,9 @@ class Game{
     Player &p2_;
     string lastTurn;
     string log;
-    int flag;
-    int draw;
+    int numOfTurns;
+    double drawFlag;
+    int numOfDraws;
 
 
   public:

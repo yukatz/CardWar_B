@@ -32,7 +32,7 @@ namespace ariel{
     int Player::stacksize(){
         return arema.size();
         };//prints the amount of cards left.
-    int Player::cardesTaken(){
+    double Player::cardesTaken(){
         return score;
         };// prints the amount of cards this player has won.
     

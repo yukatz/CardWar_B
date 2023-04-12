@@ -19,6 +19,33 @@ namespace ariel{
    string Card::cardToString() {
     std::string ValToStr;
     switch (cVal) {
+         case 2:
+            ValToStr = "Two";
+            break;
+        case 3:
+            ValToStr = "Three";
+            break;
+        case 4:
+            ValToStr = "Four";
+            break;
+        case 5:
+            ValToStr = "Five";
+            break;
+        case 6:
+            ValToStr = "Six";
+            break;
+        case 7:
+            ValToStr = "Seven";
+            break;
+        case 8:
+            ValToStr = "Eight";
+            break;
+        case 9:
+            ValToStr = "Ningh";
+            break;
+        case 10:
+            ValToStr = "Ten";
+            break;
         case 11:
             ValToStr = "Jack";
             break;
@@ -32,10 +59,10 @@ namespace ariel{
             ValToStr = "Ace";
             break;
         default:
-            ValToStr = std::to_string(cVal);
+            //ValToStr = std::to_string(cVal);
             break;
     }
-    return ValToStr + " of " + cType + " ";
+    return ValToStr + " of " + cType;
 }
 }
 
