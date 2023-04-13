@@ -15,6 +15,7 @@ class Player{
  
     //Constructor:
   public:
+
     Player(string n);
     std::string getName();
 

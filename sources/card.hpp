@@ -9,7 +9,7 @@ class Card{
 
 private:
     int cVal = 0;
-    std::string cType;
+    string cType;
 
 public:
     Card(int cVal, std::string cType);

@@ -3,14 +3,15 @@
 #include <random>
 #include "card.hpp"
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 namespace ariel{
     
     Game::Game(Player &p1, Player &p2):p1_ (p1), p2_(p2){
        vector<Card>cardSet_;
-       this->lastTurn = "";
-       this->log = "";
+       this->lastTurn = " ";
+       this->log = " ";
        this->numOfTurns=0;
        this->drawFlag=0;
        this->numOfDraws = 0;
@@ -88,6 +89,7 @@ namespace ariel{
     void Game::playAll(){//playes the game untill the end
       while(numOfTurns<26){
         playTurn();
+        numOfTurns=0;
       }
     }; 
 
@@ -109,6 +111,7 @@ namespace ariel{
 
     void Game::printLog(){//prints all the turns played one line per turn (same format as game.printLastTurn())
       cout<<log<<endl;
+      log = "";
     }; 
 
 
@@ -120,7 +123,7 @@ namespace ariel{
       cout<<p1_.getName()<<" took "<<p1_.cardesTaken()<<" cards."<<endl;
       cout<<p2_.getName()<<" wins "<<p2_.cardesTaken()/2<<" times."<<endl;
       int rate2 = static_cast<int>(((p2_.cardesTaken()/2)/26)*100);
-      cout<<p2_.getName()<<" win rate is "<<rate2<<"%"<<endl;
+      cout<<p2_.getName()<<" win rate is: "<<rate2<<"%"<<endl;
       cout<<p2_.getName()<<" took "<<p2_.cardesTaken()<<" cards."<<endl;
       cout<<"In this game were "<<numOfDraws<<" darws"<<endl;
       int draw = static_cast<int>((numOfDraws/26)*100);

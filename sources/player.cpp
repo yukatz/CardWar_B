@@ -4,6 +4,7 @@
 namespace ariel{
     
     //Constructor:
+
     Player::Player(string n){
         this->name_=n;
         vector<Card>arema;
