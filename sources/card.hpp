@@ -4,24 +4,22 @@
 
 using namespace std;
 
-namespace ariel{
-class Card{
+namespace ariel
+{
+    class Card
+    {
 
-private:
-    int cVal = 0;
-    string cType = "";
+    private:
+        int cVal;
+        int cType;
 
-public:
-    Card();
-    Card(int cVal, string cType);
-    string getType();
-    int getVal();
-    void setVal(int n);
+    public:
+        Card();
+        Card(int cVal, int cType);
+        int getType();
+        int getVal();
+        void setVal(int n);
 
-    string cardToString();
-
-
-    
+        string cardToString();
+    };
 };
-};
-

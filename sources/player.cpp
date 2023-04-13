@@ -1,40 +1,46 @@
 #include "player.hpp"
 
+namespace ariel
+{
 
-namespace ariel{
-    
-    //Constructor:
+    // Constructor:
 
-    Player::Player(string n){
-        this->name_=n;
-        vector<Card>arema;
+    Player::Player(string n)
+    {
+        this->name_ = n;
+        vector<Card> arema;
         this->score = 0;
     }
-    string Player::getName(){
+    string Player::getName()
+    {
         return name_;
     }
-    void Player::takeCard(Card card){
+    void Player::takeCard(Card card)
+    {
         arema.push_back(card);
     }
-    Card Player::droppedCard(){
+    Card Player::droppedCard()
+    {
         Card card = arema.back();
         return card;
     }
-    void Player::dropCard(){
+    void Player::dropCard()
+    {
         arema.pop_back();
     }
 
-    void Player::setScoreSize(int n){
-        score = score+n;
+    void Player::setScoreSize(int n)
+    {
+        score = score + n;
     }
 
-
-     
-    int Player::stacksize(){
+    int Player::stacksize()
+    {
         return arema.size();
-        };//prints the amount of cards left.
-    double Player::cardesTaken(){
+    }; // prints the amount of cards left.
+    double Player::cardesTaken()
+    {
         return score;
-        };// prints the amount of cards this player has won.
-    
+    }; // prints the amount of cards this player has won.
+
 };
