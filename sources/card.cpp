@@ -15,6 +15,9 @@ namespace ariel{
     int Card::getVal(){
         return cVal;
     }
+    void Card::setVal(int newVal){
+        cVal = newVal;
+    }
 
    string Card::cardToString() {
     std::string ValToStr;

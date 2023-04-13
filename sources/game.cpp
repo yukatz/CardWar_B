@@ -52,6 +52,11 @@ namespace ariel{
         numOfTurns++;
         lastTurn = p1_.getName() + " played "+card1.cardToString() + 
                    p2_.getName() + " played "+card2.cardToString() + ".";
+      if((card1.getVal()==14 && card2.getVal()==2)||(card1.getVal()==2 && card2.getVal()==14)){//As smaller then two
+        int temp = card1.getVal();
+        card1.setVal(card2.getVal());
+        card2.setVal(temp);
+      }           
       if(card1.getVal()>card2.getVal()){
         if(drawFlag == 1){
         p1_.setScoreSize(6);
@@ -69,13 +74,24 @@ namespace ariel{
       }
       if(card1.getVal()==card2.getVal()){
         lastTurn = lastTurn + "Draw.\n";
+        if(p1_.stacksize()==1&&p2_.stacksize()==1){
+        p1_.setScoreSize(1); p2_.setScoreSize(1);
+        numOfDraws++;
+        }else
+        {
         p1_.dropCard();
         p2_.dropCard();
+        numOfTurns++;
         drawFlag = 1;
+        numOfDraws++;
+        }
                
       }
       log = log + lastTurn;
-      } else throw std::out_of_range("Game over");//Blocks another turn after the game is over.
+      } else {
+      if(drawFlag==1){p1_.setScoreSize(2); p2_.setScoreSize(2);}
+      throw std::out_of_range("Game over");//Blocks another turn after the game is over.
+      }
       }else throw std::out_of_range("Must enter 2 different players");//Only becouse the test case.
 
 
@@ -89,7 +105,6 @@ namespace ariel{
     void Game::playAll(){//playes the game untill the end
       while(numOfTurns<26){
         playTurn();
-        numOfTurns=0;
       }
     }; 
 

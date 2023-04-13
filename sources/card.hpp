@@ -15,6 +15,8 @@ public:
     Card(int cVal, std::string cType);
     std::string getType();
     int getVal();
+    void setVal(int n);
+
     string cardToString();
 
 
