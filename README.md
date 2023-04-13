@@ -1,31 +1,51 @@
-<div dir="rtl" lang="he">
-
-# מלחמה
-במטלה זו נממש את משחק הקלפים מלחמה עבור שני שחקנים. 
-יש חפיסת קלפים רגיל עם 52 קלפים בתחילת המשחק החפיסה מעורבבת (בצורה ראנדומאלית) ומחולקת שווה בשווה בין שני השחקנים.
-בכל תור השחקנים שולפים קלף אחד מראש הערימה שלהם השחקן עם הקלף הגבוהה ביותר לוקח את שני הקלפים אליו (2 מנצח אס).
-אם השחקנים שלפו שני קלפים זהים אז הם מניחים קלף אחד הפוך ומעליו קלף פחות. השחק עם הקלף הגבוהה לוקח את כל ששת הקלפים. במידה ושוב יש תיקו ממשיכים עם קלף סגור ואחריו קלף פתוח עד שאחד השחקנים מנצח. התור נמשך עד שאחד השחקנים לוקח את הקופה או שנגמרים הקלפים. 
-אם נגמרים הקלפים תוך כדי השובר שיוויון כל שחקן לוקח את הקלפים שהוא זרק (מתחלקים בקופה חצי חצי).
-המשחק נמשך עד שנגמרים לשחקנים הקלפים והמנצח הוא השחקן שלקח לעצמו את מירב הקלפים. 
-
-דוגמאות לפעולת המחלקה ניתן למצוא ב-[Demo.cpp](Demo.cpp).
-
-בשלב ב עליכם לכתוב את המימוש המלא. מותר לערוך את המימוש של שלב א אבל אם עשיתם עבודה טובה לא יהיה בכך צורך.
-יעלו טסטים נבחרים של סטודנטים. עליכם לעבור את כל הטסטים בציון 100. המטלה תיבדר ע"י הרצת
-
-כיתבו את כל הקבצים הדרושים כך שהפקודות הבאות יעבדו ללא שגיאות:
-
-<div dir='ltr'>
-
-    bash grade
-
-</div>
+# CPP course - Exercise 2 Cards War Game
+![image](https://user-images.githubusercontent.com/92925727/227800434-5aa567b8-2f11-42c1-a7e2-3a29d3651ec0.png)
 
 
-שימו לב:
-אין לשנות קבצים קיימים, אלא רק להוסיף קבצים חדשים.
-מערכת הבדיקה האוטומטית מעתיקה מחדש את כל הקבצים הקיימים על-גבי הפתרון שאתם מגישים,
-ולכן כל שינוי שתעשו בקבצים הקיימים יימחק.
+### Introduction
+This is my second project in the CPP course - implementatio of cards War game.
+This assignment is divided into 2:
+- [1] Create classes for proper compilation of the demo.cpp and at least 20 test to functions given in demo.cpp.
+- [2] The implementation of the functions.
 
-בהצלחה
-</div>
+### The 1'st part mission
+Implement a general adaptive array in the C language. 
+>Adaptive array - is an array that changes its size so that any reference to a negative index is valid. When you refer to an index where no value has been placed then NULL is returned. There is no preliminary information on the type of elements that will enter the array.
+ 
+### Main Classes
+- [x] **Demo**
+  >
+- [x] **Player** 
+  >
+- [x] **Game**
+  >
+- [x] **Card** 
+  >
+  
+### Main Tests
+For every function in demo (main) class, I build a test case.
+  
+- [x] **CHECK_NOTROWS** 
+  >Checks if the function don't trow's an error(exsepropn).
+- [x] **CHECK_TROWS** 
+  >Checks if the function do trow an error(exsepropn) when something not valid hapened.
+- [x] **Print Check** 
+  >Checks the print outputs.
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
