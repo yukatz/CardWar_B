@@ -11,9 +11,9 @@ namespace ariel
     Player &p2_;
     string lastTurn = "";
     string log = "";
-    int numOfTurns;
+    double numOfTurns;
     double drawFlag;
-    int numOfDraws;
+    double numOfDraws;
     vector<Card> cardSet_;
 
   public:

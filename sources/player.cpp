@@ -8,23 +8,23 @@ namespace ariel
     Player::Player(string n)
     {
         this->name_ = n;
-        vector<Card> arema;
-        this->score = 0;
+        vector<Card> arema;//player cards
+        this->score = 0;//how much cards player took
     }
     string Player::getName()
     {
         return name_;
     }
-    void Player::takeCard(Card card)
+    void Player::takeCard(Card card)//using by dividing cards function
     {
         arema.push_back(card);
     }
-    Card Player::droppedCard()
+    Card Player::droppedCard()//to use the dropped card information
     {
         Card card = arema.back();
         return card;
     }
-    void Player::dropCard()
+    void Player::dropCard()//delete card from user hand
     {
         arema.pop_back();
     }
