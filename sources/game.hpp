@@ -9,11 +9,12 @@ class Game{
   private:   
     Player &p1_;
     Player &p2_;
-    string lastTurn;
-    string log;
+    string lastTurn = "";
+    string log = "";
     int numOfTurns;
     double drawFlag;
     int numOfDraws;
+    vector<Card> cardSet_;
 
 
   public:

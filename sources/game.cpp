@@ -4,12 +4,13 @@
 #include "card.hpp"
 #include <vector>
 #include <algorithm>
+#include <string>
 
 using namespace std;
 namespace ariel{
     
     Game::Game(Player &p1, Player &p2):p1_ (p1), p2_(p2){
-       vector<Card>cardSet_;
+       //vector<Card>cardSet_;
        this->lastTurn = " ";
        this->log = " ";
        this->numOfTurns=0;
@@ -50,7 +51,7 @@ namespace ariel{
         p1_.dropCard();
         p2_.dropCard();
         numOfTurns++;
-        lastTurn = p1_.getName() + " played "+card1.cardToString() + 
+        lastTurn = lastTurn+p1_.getName() + " played "+card1.cardToString() + 
                    p2_.getName() + " played "+card2.cardToString() + ".";
       if((card1.getVal()==14 && card2.getVal()==2)||(card1.getVal()==2 && card2.getVal()==14)){//As smaller then two
         int temp = card1.getVal();
@@ -62,7 +63,7 @@ namespace ariel{
         p1_.setScoreSize(6);
         }else {p1_.setScoreSize(2);}
         drawFlag = 0;
-        lastTurn = lastTurn +p1_.getName() + " wins.\n";
+        lastTurn = lastTurn + p1_.getName() + " wins.\n";
        
       }
       if(card1.getVal()<card2.getVal()) {

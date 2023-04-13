@@ -3,13 +3,16 @@
 #include <string>
 
 namespace ariel{
-   
+    Card::Card(){
+        cVal = 0;
+        cType = "";
+    }
     Card::Card(int cVal, string cType){
         this->cVal=cVal;
         this->cType=cType;
     }
     
-    std::string Card::getType(){
+    string Card::getType(){
         return cType;
     }
     int Card::getVal(){
@@ -20,7 +23,7 @@ namespace ariel{
     }
 
    string Card::cardToString() {
-    std::string ValToStr;
+    string ValToStr = "";
     switch (cVal) {
          case 2:
             ValToStr = "Two";
@@ -62,7 +65,7 @@ namespace ariel{
             ValToStr = "Ace";
             break;
         default:
-            //ValToStr = std::to_string(cVal);
+            ValToStr = std::to_string(cVal);
             break;
     }
     return ValToStr + " of " + cType;

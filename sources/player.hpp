@@ -8,7 +8,7 @@ using namespace std;
 namespace ariel{
 class Player{
   private:   
-    string name_;
+    string name_ = "";
     int score;
     vector<Card> arema;
 

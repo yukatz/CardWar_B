@@ -9,11 +9,12 @@ class Card{
 
 private:
     int cVal = 0;
-    string cType;
+    string cType = "";
 
 public:
-    Card(int cVal, std::string cType);
-    std::string getType();
+    Card();
+    Card(int cVal, string cType);
+    string getType();
     int getVal();
     void setVal(int n);
 
